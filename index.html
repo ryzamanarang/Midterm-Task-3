@@ -147,6 +147,39 @@
             color: #ff1493;
             margin-bottom: 10px;
         }
+
+        .download-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 15px 25px;
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Gothic', cursive;
+            font-size: 18px;
+            border-radius: 25px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+        }
+
+        .download-btn:active {
+            transform: translateY(1px);
+        }
+
+        .download-btn::before {
+            content: '⬇️';
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -158,6 +191,8 @@
     <div class="container">
         <h1>Midterm Task 3 - Creating PIVOT TABLE and DASHBOARD</h1>
         
+        <a href="https://github.com/user-attachments/files/19253457/MANARANG.xlsx" class="download-btn">Download Excel File</a>
+
         <div class="process-section">
             <h2>Step by Step Process</h2>
             <ol>
