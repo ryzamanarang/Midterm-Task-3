@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midterm Task 3 - Creating PIVOT TABLE and DASHBOARD</title>
+    <style>
+        /* Loading Animation */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loader {
+            width: 100px;
+            height: 100px;
+            border: 5px solid #ff69b4;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        .skull-icon {
+            position: absolute;
+            font-size: 40px;
+            color: #ff69b4;
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        /* Bat burst animation */
+        .bat-burst {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            background-image: url('https://media.tenor.com/Npixqj3Ek1IAAAAi/sappy-seals.gif');
+            background-size: contain;
+            background-repeat: no-repeat;
+            pointer-events: none;
+            animation: burst 1.5s ease-out forwards;
+            z-index: 9999;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeOut {
+            100% { opacity: 0; visibility: hidden; }
+        }
+
+        @keyframes burst {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        @keyframes backgroundScroll {
+            from { background-position: 0 0; }
+            to { background-position: -100% 0; }
+        }
+
+        body {
+            cursor: url('https://www.cursor.cc/cursor3d/66307.png') 25 25, auto;
+            background-color: #1a1a1a;
+            color: #ff69b4;
+            font-family: 'Gothic', cursive;
+            margin: 0;
+            padding: 20px;
+            background-image: url('https://i.pinimg.com/736x/6e/23/ed/6e23edac1daba77b52caafff61a4c369.jpg');
+            background-repeat: repeat-x;
+            animation: backgroundScroll 20s linear infinite;
+            background-size: contain;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #ff1493;
+            text-shadow: 2px 2px 4px #000;
+            font-family: 'Monster High', fantasy;
+        }
+
+        .process-section, .screenshots-section {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: rgba(26, 26, 26, 0.8);
+            border-radius: 10px;
+            border: 2px solid #ff69b4;
+            transition: transform 0.3s;
+        }
+
+        .process-section:hover, .screenshots-section:hover {
+            transform: scale(1.01);
+            box-shadow: 0 0 25px rgba(255, 105, 180, 0.3);
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        ol li {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: rgba(255, 105, 180, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #ff1493;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 3px solid #ff69b4;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+        }
+
+        .screenshot-container {
+            margin: 30px 0;
+        }
+
+        .screenshot-container h3 {
+            color: #ff1493;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+        <div class="skull-icon">💀</div>
+    </div>
+
+    <div class="container">
+        <h1>Midterm Task 3 - Creating PIVOT TABLE and DASHBOARD</h1>
+        
+        <div class="process-section">
+            <h2>Step by Step Process</h2>
+            <ol>
+                <li>Use the given data
+                    <ul>
+                        <li>Open the Worksheet on Uncleaned DS Jobs and the Transform Tables:
+                            <ul>
+                                <li>Sal By Role</li>
+                                <li>Sal By State</li>
+                                <li>Sal By Size</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Design the dashboard to highlight the following:
+                    <ul>
+                        <li>State with the most Data Science jobs</li>
+                        <li>Job role with the highest average salary</li>
+                        <li>Company size that pays the highest salary</li>
+                        <li>Sector with the lowest & highest number of Data Science jobs</li>
+                        <li>Sector with the minimum & maximum average salary</li>
+                    </ul>
+                </li>
+                <li>Create a pivot table
+                <ul>
+                    <li>Use pivot tables to summarize data for sector jobs and salary (d & e)</li>
+                </ul>
+            </li>
+            <li>Generate charts for reports
+                <ul>
+                    <li>Use bar, column, or pie charts to visualize salary trends and job distribution</li>
+                </ul>
+            </li>
+            <li>Insert slicers for filtering
+                <ul>
+                    <li>Add slicers for role type, company size, and state to make the dashboard interactive</li>
+                </ul>
+            </li>
+            <li>Add a map (optional)
+                <ul>
+                    <li>Use bar, column, or pie charts to visualize salary trends and job distribution</li>
+                </ul>
+            </li>
+            <li>Apply design & formatting
+                <ul>
+                    <li>Customize the colors, fonts, and layout to make the dashboard visually appealing</li>
+                </ul>
+            </li>
+            <li>Complete the dashboard
+                <ul>
+                    <li>Ensure all required visuals and reports are included</li>
+                    <li>The slicers should be functional and interactive</li>
+            </ol>
+        </div>
+
+        <div class="screenshots-section">
+            <h2>Screenshots During Analysis</h2>
+            
+            <div class="screenshot-container">
+                <h3>Sal by Role Type</h3>
+                <img src="https://github.com/user-attachments/assets/09e1380e-482c-4b1a-8eec-c90c30e50b30" alt="Salary by Role Type">
+            </div>
+
+            <div class="screenshot-container">
+                <h3>Sal by Size</h3>
+                <img src="https://github.com/user-attachments/assets/53566ec5-f1ca-46e8-972e-1592771975b5" alt="Salary by Size">
+            </div>
+
+            <div class="screenshot-container">
+                <h3>Sal by State</h3>
+                <img src="https://github.com/user-attachments/assets/f074dc59-bc66-45dc-80a4-25851c98c339" alt="Salary by State">
+            </div>
+
+            <div class="screenshot-container">
+                <h3>Sector by Size</h3>
+                <img src="https://github.com/user-attachments/assets/ca9b7335-0c98-45b8-b3ef-7f4e7cc3d6cf" alt="Sector by Size">
+            </div>
+
+            <div class="screenshot-container">
+                <h3>Sector by Sal</h3>
+                <img src="https://github.com/user-attachments/assets/50cdc048-878f-4cde-b560-dd942711faf9" alt="Sector by Salary">
+            </div>
+
+            <div class="screenshot-container">
+                <h3>Dashboard</h3>
+                <img src="https://github.com/user-attachments/assets/2213eac4-e20e-47c2-8364-e9c83b68c7fb" alt="Dashboard 1">
+                <img src="https://github.com/user-attachments/assets/2d752750-13f4-4d7e-a8eb-d8e1d5d5d034" alt="Dashboard 2">
+            </div>
+
+            <div class="screenshot-container">
+                <h3>Map</h3>
+                <img src="https://github.com/user-attachments/assets/418b00ab-2b96-47c0-840a-141bf1405665" alt="Map">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.loader-wrapper').style.animation = 'fadeOut 1s ease-out forwards';
+            }, 2000);
+        });
+
+        document.addEventListener('click', (e) => {
+            const burst = document.createElement('div');
+            burst.className = 'bat-burst';
+            burst.style.left = `${e.clientX - 30}px`;
+            burst.style.top = `${e.clientY - 30}px`;
+            document.body.appendChild(burst);
+
+            setTimeout(() => {
+                burst.remove();
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
